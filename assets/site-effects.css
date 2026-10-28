@@ -1,0 +1,61 @@
+:root { --vermilion: #f2644b; }
+
+html { scroll-snap-type: y mandatory; scroll-padding-top: 72px; }
+main > section { scroll-snap-align: start; scroll-margin-top: 0; }
+
+body[data-theme="blue"] { --surface: #182aa2; --surface-text: #f5f2ea; }
+body[data-theme="paper"] { --surface: #f5f2ea; --surface-text: #151515; }
+body[data-theme="white"] { --surface: #fffefa; --surface-text: #151515; }
+body[data-theme="ink"] { --surface: #151515; --surface-text: #f5f2ea; }
+body[data-theme="vermilion"] { --surface: var(--vermilion); --surface-text: #151515; }
+
+body {
+  background-color: var(--surface);
+  color: var(--surface-text);
+  transition: background-color .75s cubic-bezier(.22, 1, .36, 1), color .55s ease;
+}
+
+.header { background-color: #f5f2ea; color: #151515; }
+.hero, .purpose, .who, .work, .philosophy, .belief, .casework, .testimonials, .contact,
+.intro, .team, .next, .footer { background: transparent; color: inherit; }
+
+.work-item .number { color: var(--vermilion); }
+.work .shell { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8%; align-items: start; }
+.work-heading { display: block; position: sticky; top: 120px; }
+.work-heading .section-label { margin-bottom: 38px; }
+.work h2 { font-size: clamp(3.3rem, 5.35vw, 6.2rem); }
+.work-list { margin-top: 0; }
+.work-item { grid-template-columns: 42px 1fr; gap: 24px; }
+.contact-note { color: #2e241f; }
+::selection { background: var(--vermilion); color: #151515; }
+
+.reveal-word { display: inline-block; overflow: hidden; vertical-align: bottom; padding-bottom: .1em; margin-bottom: -.1em; }
+.reveal-word > span { display: inline-block; }
+.motion-ready .reveal-heading:not(.is-visible) .reveal-word > span {
+  opacity: 0;
+  transform: translateY(1.12em);
+}
+.motion-ready .reveal-heading.is-visible .reveal-word > span {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform .9s cubic-bezier(.22, 1, .36, 1) var(--reveal-delay), opacity .55s ease var(--reveal-delay);
+}
+
+@media (max-width: 900px) {
+  .work .shell { display: block; }
+  .work-heading { position: static; }
+  .work-list { margin-top: 58px; }
+}
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 64px; }
+  .work h2 { font-size: clamp(3.2rem, 12vw, 4.8rem); }
+  .work-list { margin-top: 51px; }
+  .work-item { grid-template-columns: 1fr; gap: 7px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-snap-type: none; }
+  body { transition: none; }
+  .motion-ready .reveal-heading .reveal-word > span { opacity: 1; transform: none; transition: none; }
+}

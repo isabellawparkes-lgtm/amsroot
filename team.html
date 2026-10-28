@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f5f2ea">
+  <meta name="description" content="Meet the senior team behind AMS ROOT’s media planning and buying for charities.">
+  <title>Our team — AMS ROOT</title>
+  <style>
+    @font-face { font-family:'ABC Areal'; src:url('assets/fonts/ABCAreal-Regular.woff2') format('woff2'); font-weight:400; font-style:normal; font-display:swap; }
+    @font-face { font-family:'ABC Areal'; src:url('assets/fonts/ABCAreal-Medium.woff2') format('woff2'); font-weight:500; font-style:normal; font-display:swap; }
+    @font-face { font-family:'ABC Areal'; src:url('assets/fonts/ABCAreal-Bold.woff2') format('woff2'); font-weight:700; font-style:normal; font-display:swap; }
+    @font-face { font-family:'ABC Areal'; src:url('assets/fonts/ABCAreal-RegularItalic.woff2') format('woff2'); font-weight:400; font-style:italic; font-display:swap; }
+    :root { --paper:#f5f2ea; --white:#fffefa; --ink:#151515; --muted:#4e4d49; --blue:#182aa2; --line:#c8c5bc; --max:1440px; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.5 'ABC Areal',Arial,Helvetica,sans-serif; }
+    a { color:inherit; }
+    h1,h2,p,figure { margin:0; }
+    h1,h2 { font-weight:500; letter-spacing:-.065em; line-height:.98; }
+    .shell { width:min(calc(100% - 72px),var(--max)); margin:auto; }
+    .kicker { font-size:.7rem; letter-spacing:.16em; line-height:1.3; text-transform:uppercase; font-weight:700; }
+    :focus-visible { outline:3px solid var(--blue); outline-offset:4px; }
+    .header { background:var(--paper); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20; }
+    .header-inner { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:30px; }
+    .brand { font-size:1.36rem; font-weight:700; line-height:1; letter-spacing:-.07em; text-decoration:none; white-space:nowrap; }
+    .brand span { color:var(--blue); }
+    .nav { display:flex; align-items:center; gap:38px; }
+    .nav a { text-decoration:none; text-transform:uppercase; font-size:.72rem; font-weight:700; letter-spacing:.1em; }
+    .nav a:hover,.nav a[aria-current="page"] { border-bottom:1px solid currentColor; }
+    .menu { display:none; border:0; background:none; font:inherit; font-size:1.6rem; padding:5px; line-height:1; cursor:pointer; }
+    .intro { background:var(--blue); color:var(--paper); padding:125px 0 100px; }
+    .intro h1 { font-size:clamp(4.5rem,9.6vw,10rem); max-width:1160px; margin:40px 0 0; }
+    .intro-bottom { border-top:1px solid rgba(245,242,234,.55); margin-top:80px; padding-top:28px; display:grid; grid-template-columns:.34fr 1fr; gap:8%; }
+    .intro-bottom p { max-width:750px; font-size:clamp(1.15rem,1.7vw,1.5rem); line-height:1.45; }
+    .team { padding:113px 0 145px; }
+    .team-head { display:grid; grid-template-columns:.34fr 1fr; gap:8%; align-items:start; margin-bottom:68px; }
+    .team h2 { font-size:clamp(3.3rem,6vw,6.8rem); max-width:920px; }
+    .team-head p { max-width:700px; font-size:1.14rem; line-height:1.55; margin-top:25px; }
+    .grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:55px 24px; }
+    .person { min-width:0; }
+    .portrait { aspect-ratio:4/5; background:#e5e2d9; display:flex; align-items:center; justify-content:center; border:1px solid #dad7cf; }
+    .person figcaption { border-top:1px solid var(--line); margin-top:13px; padding-top:14px; }
+    .person .number { font-size:.68rem; letter-spacing:.13em; font-weight:700; }
+    .person h3 { margin:17px 0 0; font-size:clamp(1.35rem,1.85vw,1.75rem); font-weight:500; letter-spacing:-.05em; line-height:1.15; }
+    .next { background:var(--white); padding:95px 0 105px; }
+    .next-inner { display:grid; grid-template-columns:.34fr 1fr; gap:8%; }
+    .next p { max-width:750px; font-size:clamp(1.5rem,2.6vw,2.5rem); letter-spacing:-.04em; line-height:1.2; }
+    .next a { display:inline-block; border-bottom:1px solid currentColor; margin-top:35px; padding-bottom:6px; font-size:.87rem; font-weight:700; text-decoration:none; }
+    .next a:hover { color:var(--blue); }
+    .footer { border-top:1px solid var(--line); padding:30px 0 38px; }
+    .footer-inner { display:flex; justify-content:space-between; align-items:start; gap:24px; }
+    .footer p { max-width:520px; text-align:right; font-size:.77rem; color:var(--muted); }
+    @media(max-width:900px) {
+      .nav { gap:16px; }
+      .shell { width:min(calc(100% - 46px),var(--max)); }
+      .intro-bottom,.team-head,.next-inner { grid-template-columns:1fr; gap:27px; }
+      .grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    @media(max-width:760px) {
+      body { font-size:16px; }
+      .shell { width:min(calc(100% - 34px),var(--max)); }
+      .header-inner { min-height:64px; }
+      .brand { font-size:1.25rem; }
+      .menu { display:block; }
+      .nav { display:none; position:absolute; top:64px; left:0; right:0; background:var(--paper); border-bottom:1px solid var(--line); padding:17px; flex-direction:column; align-items:stretch; gap:0; }
+      .nav.open { display:flex; }
+      .nav a { padding:14px 0; font-size:.85rem; }
+      .intro { padding:85px 0 78px; }
+      .intro h1 { font-size:clamp(3.75rem,14vw,6rem); margin-top:27px; }
+      .intro-bottom { margin-top:55px; }
+      .team { padding:83px 0 90px; }
+      .team h2 { font-size:clamp(3.2rem,12vw,4.8rem); }
+      .team-head { margin-bottom:45px; }
+      .grid { gap:35px 14px; }
+      .person h3 { font-size:1.25rem; }
+      .next { padding:75px 0 85px; }
+      .footer-inner { flex-direction:column; }
+      .footer p { text-align:left; }
+    }
+    @media(max-width:390px) { .grid { grid-template-columns:1fr 1fr; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+  <link rel="stylesheet" href="assets/site-effects.css">
+</head>
+<body data-theme="blue">
+  <header class="header"><div class="shell header-inner">
+    <a class="brand" href="index.html#top" aria-label="AMS ROOT, home">AMS<span>·</span>ROOT</a>
+    <button class="menu" type="button" aria-controls="nav" aria-expanded="false" aria-label="Open navigation">☰</button>
+    <nav class="nav" id="nav" aria-label="Main navigation"><a href="index.html#purpose">Purpose</a><a href="index.html#who">Who we are</a><a href="team.html" aria-current="page">Team</a><a href="index.html#work">Services</a><a href="index.html#casework">Work</a><a href="index.html#philosophy">Why AMS ROOT</a><a href="index.html#contact">Contact</a></nav>
+  </div></header>
+  <main>
+    <section class="intro" data-scroll-theme="blue"><div class="shell"><div class="kicker">AMS ROOT / People</div><h1>Our team.</h1><div class="intro-bottom"><div class="kicker">Senior involvement</div><p>Experienced practitioners work directly on strategy and planning, stay involved throughout the campaign and take responsibility for the advice they give. Our senior team brings over 75 years of collective experience.</p></div></div></section>
+    <section class="team" data-scroll-theme="paper"><div class="shell"><div class="team-head"><div class="kicker">Our team</div><div><h2>The people behind the work.</h2><p>Profiles will be added here once names, portraits and biographies have been agreed.</p></div></div><div class="grid" aria-label="Eight team profile placeholders">
+      <figure class="person"><div class="portrait" aria-hidden="true"></div><figcaption><span class="number">01 / TEAM</span><h3>Name to follow</h3></figcaption></figure>
+      <figure class="person"><div class="portrait" aria-hidden="true"></div><figcaption><span class="number">02 / TEAM</span><h3>Name to follow</h3></figcaption></figure>
+      <figure class="person"><div class="portrait" aria-hidden="true"></div><figcaption><span class="number">03 / TEAM</span><h3>Name to follow</h3></figcaption></figure>
+      <figure class="person"><div class="portrait" aria-hidden="true"></div><figcaption><span class="number">04 / TEAM</span><h3>Name to follow</h3></figcaption></figure>
+      <figure class="person"><div class="portrait" aria-hidden="true"></div><figcaption><span class="number">05 / TEAM</span><h3>Name to follow</h3></figcaption></figure>
+      <figure class="person"><div class="portrait" aria-hidden="true"></div><figcaption><span class="number">06 / TEAM</span><h3>Name to follow</h3></figcaption></figure>
+      <figure class="person"><div class="portrait" aria-hidden="true"></div><figcaption><span class="number">07 / TEAM</span><h3>Name to follow</h3></figcaption></figure>
+      <figure class="person"><div class="portrait" aria-hidden="true"></div><figcaption><span class="number">08 / TEAM</span><h3>Name to follow</h3></figcaption></figure>
+    </div></div></section>
+    <section class="next" data-scroll-theme="vermilion"><div class="shell next-inner"><div class="kicker">Start a conversation</div><div><p>You should be able to question our advice, discuss the alternatives and understand why we recommend a particular course of action.</p><a href="index.html#contact">Talk to us ↗</a></div></div></section>
+  </main>
+  <footer class="footer" data-scroll-theme="paper"><div class="shell footer-inner"><a class="brand" href="index.html#top">AMS<span>·</span>ROOT</a><p>Website concept for review. Team profiles and contact details need approval for public use.</p></div></footer>
+  <script>
+    const menu = document.querySelector('.menu');
+    const nav = document.querySelector('.nav');
+    menu.addEventListener('click', () => {
+      const open = nav.classList.toggle('open');
+      menu.setAttribute('aria-expanded', String(open));
+      menu.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation');
+    });
+    nav.addEventListener('click', event => {
+      if (event.target.closest('a')) {
+        nav.classList.remove('open');
+        menu.setAttribute('aria-expanded', 'false');
+        menu.setAttribute('aria-label', 'Open navigation');
+      }
+    });
+  </script>
+  <script src="assets/site-effects.js" defer></script>
+</body>
+</html>
