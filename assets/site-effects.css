@@ -59,3 +59,64 @@ body {
   body { transition: none; }
   .motion-ready .reveal-heading .reveal-word > span { opacity: 1; transform: none; transition: none; }
 }
+
+/* Keep the fixed navigation legible as sections change colour. */
+.header {
+  background-color: var(--surface);
+  color: var(--surface-text);
+  border-color: color-mix(in srgb, currentColor 25%, transparent);
+  transition: background-color .75s cubic-bezier(.22, 1, .36, 1), color .55s ease, border-color .55s ease;
+}
+.brand span { color: var(--vermilion); }
+.menu { color: inherit; }
+
+/* Give animated letters breathing room and avoid a crowded tablet navigation. */
+main h1, main h2 { line-height: 1.04; }
+.reveal-word { padding-top: .14em; padding-bottom: .18em; margin-top: -.14em; margin-bottom: -.18em; }
+@media (max-width: 1100px) {
+  .header-inner { min-height: 64px; }
+  .menu { display: block; }
+  .nav { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--surface); color: var(--surface-text); border-bottom: 1px solid color-mix(in srgb, currentColor 25%, transparent); padding: 17px 23px; flex-direction: column; align-items: stretch; gap: 0; }
+  .nav.open { display: flex; }
+  .nav a { padding: 13px 0; font-size: .8rem; }
+}
+
+/* A small reduction in reading copy; display headings keep their scale. */
+body { font-size: 15px; }
+.hero-bottom p { font-size: clamp(1rem, 1.45vw, 1.31rem); }
+.purpose-copy p, .who-grid p, .who-together { font-size: clamp(1rem, 1.35vw, 1.18rem); }
+.work-heading .intro, .casework-heading p, .testimonial-intro, .contact-copy, .team-head p { font-size: 1.02rem; }
+.work-item p { font-size: .94rem; }
+.philosophy-grid p { font-size: 1.03rem; }
+.belief .senior-promise { font-size: clamp(1.06rem, 1.5vw, 1.39rem); }
+.intro-bottom p { font-size: clamp(1.07rem, 1.55vw, 1.39rem); }
+@media (max-width: 760px) {
+  body { font-size: 15px; }
+  .purpose-copy p, .philosophy-grid p, .casework-heading p { font-size: 1rem; }
+  .nav { top: 100%; padding-inline: 17px; }
+}
+
+/* The client marks are individually framed, with their supplied background removed in SVG. */
+.client-feature { margin: 0 0 92px; padding-bottom: 74px; border-bottom: 1px solid var(--line); }
+.client-feature-head { display: flex; align-items: baseline; justify-content: space-between; gap: 22px; margin-bottom: 33px; }
+.client-feature-head p { font-size: 1.02rem; color: inherit; opacity: .7; }
+.client-filter { position: absolute; width: 0; height: 0; overflow: hidden; }
+.client-ticker { overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent); }
+.client-ticker-track { display: flex; width: max-content; animation: client-drift 56s linear infinite; }
+.client-ticker:hover .client-ticker-track { animation-play-state: paused; }
+.client-ticker-group { display: flex; align-items: center; gap: 65px; padding-right: 65px; flex: none; }
+.client-logo { flex: none; display: grid; place-items: center; width: var(--logo-width); height: 86px; }
+.client-logo svg { display: block; width: 100%; height: 100%; overflow: hidden; }
+@keyframes client-drift { to { transform: translateX(-50%); } }
+@media (max-width: 760px) {
+  .client-feature { margin-bottom: 67px; padding-bottom: 56px; }
+  .client-feature-head { display: block; margin-bottom: 26px; }
+  .client-feature-head p { margin-top: 10px; font-size: 1rem; }
+  .client-ticker-group { gap: 42px; padding-right: 42px; }
+  .client-logo { height: 72px; width: calc(var(--logo-width) * .85); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .client-ticker { overflow-x: auto; mask-image: none; }
+  .client-ticker-track { animation: none; }
+  .client-ticker-group[aria-hidden="true"] { display: none; }
+}
